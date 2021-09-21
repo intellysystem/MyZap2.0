@@ -3,7 +3,7 @@
 # Project: myzap2.0                                                            #
 # Created Date: 2021-06-21 12:52:13                                            #
 # Author: Eduardo Policarpo                                                    #
-# Last Modified: 2021-06-28 04:10:43                                           #
+# Last Modified: 2021-07-23 15:07:40                                           #
 # Modified By: Eduardo Policarpo                                               #
 ##############################################################################*/
 
@@ -27,13 +27,14 @@ const {
     STORAGE_BUCKET,
     MESSAGING_SENDER_ID,
     APP_ID,
-    START_ALL_SESSIONS
+    START_ALL_SESSIONS,
+    FORCE_CONNECTION_USE_HERE
 } = process.env;
 
 assert(PORT, 'PORT is required, please set the PORT variable value in the .env file');
 assert(HOST, 'HOST is required, please set the HOST variable value in the .env file');
 assert(TOKEN, 'TOKEN is required, please set the ENGINE variable value in the .env file');
-assert(TOKEN, 'ENGINE is required, please set the ENGINE variable value in the .env file');
+assert(ENGINE, 'ENGINE is required, please set the ENGINE variable value in the .env file');
 
 
 module.exports = {
@@ -52,5 +53,6 @@ module.exports = {
         messagingSenderId: MESSAGING_SENDER_ID,
         appId: APP_ID
     },
-    start_all_sessions: START_ALL_SESSIONS
+    start_all_sessions: START_ALL_SESSIONS,
+    useHere: FORCE_CONNECTION_USE_HERE
 }
